@@ -1,4 +1,4 @@
-import 'dart:io';
+import 'dart:io' show SecurityContext;
 
 const _certificates = """
 -----BEGIN CERTIFICATE-----

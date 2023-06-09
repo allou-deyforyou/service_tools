@@ -1,11 +1,9 @@
-import 'dart:async';
-
-import 'package:flutter/widgets.dart';
-import 'package:flutter/foundation.dart';
+import 'package:flutter/widgets.dart' show WidgetsFlutterBinding;
+import 'package:flutter/foundation.dart' show kReleaseMode;
 
 import 'security_io.dart' if (dart.library.html) 'security_web.dart';
 
-Future<void> runService(LessService service) {
+Future<void> runService(FlutterService service) {
   WidgetsFlutterBinding.ensureInitialized();
   setTrustedCertificates();
 
@@ -16,8 +14,8 @@ Future<void> runService(LessService service) {
   }
 }
 
-abstract class LessService {
-  const LessService();
+abstract class FlutterService {
+  const FlutterService();
 
   Future<void> production();
   Future<void> development();
